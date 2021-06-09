@@ -14,7 +14,6 @@ describe('ACTIONS - Test calculatorActions',()=>{
     let wrapper
     beforeEach(() => { // Runs before each test in the suite
         store.clearActions();
-        
         wrapper = shallow(<Home />)
     });
     it('actionCreator addInputs', () => {
@@ -27,6 +26,7 @@ describe('ACTIONS - Test calculatorActions',()=>{
             },
         ];
         store.dispatch(add);
+        
         expect(store.getActions()).toEqual(expectedActions);
 
     });

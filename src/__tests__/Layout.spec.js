@@ -30,4 +30,5 @@ describe('Layout snapshot',()=>{
         //Créer snapshot*
         expect(layout.find('Home')).toMatchSnapshot()
     });
+    
 });

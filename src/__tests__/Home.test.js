@@ -13,11 +13,9 @@ import calculatorReducers from '../reducers/calculatorReducers'
 
 describe('HOME snapshot',()=>{
     it('It renders without crashing', () => {
-        //CRéer un snapshot test
+        //Créer un snapshot test
         expect(Home).toMatchSnapshot();
-
     });
-
 });
 
 describe('HOME shallow description',()=>{
@@ -36,7 +34,7 @@ describe('HOME shallow description',()=>{
 
     it('Contains header - h2', () => {
         //Créer le expect
-        expect(wrapper.exists('h2')).toBeTruthy();
+        expect(wrapper.exists('h2')).toEqual(true);
         // expect(wrapper.find('h2').get(0).props.children).toBeTruthy()
     });
     it('H2 header value ', () => {
@@ -56,7 +54,7 @@ describe('HOME shallow description',()=>{
         const input2 =  wrapper.find('input').at(1);
         expect(input2).toMatchSnapshot();
     });
-     it('Contains output', () => {
+    it('Contains output', () => {
          //Créer le expect
          const input3 =  wrapper.find('input').last();
          expect(input3).toMatchSnapshot();
@@ -65,13 +63,25 @@ describe('HOME shallow description',()=>{
     it('Contains button with id="add"', () => {
         
         const addButton = wrapper.find("button#add");
+        const content =  {
+            id: 'add',
+            onClick: expect.any(Function),
+            children: 'Add'
+          }
         expect(addButton).toMatchSnapshot();
+        expect(addButton.get(0).props).toEqual(content);
 
     });
     it('Contains button with id="subtract"', () => {
         //Créer le expect
         const  substractButton =  wrapper.find('button#subtract');
-        expect(substractButton).toMatchSnapshot();
+        const content =  {
+            id: 'subtract',
+            onClick: expect.any(Function),
+            children: 'Subtract'
+          }
+          expect(substractButton).toMatchSnapshot();
+          expect(substractButton.get(0).props).toEqual(content);
     });
 });
 
@@ -145,7 +155,19 @@ describe('HOME mounted',()=>{
 
 
     it('Calculate when Inputs are Filled and ADD is Clicked', () => {
-        let substractButton = wrapper.find('button').at(0);
+        let substractButton = wrapper.find('button#subtract').at(0);
+        let input1 = wrapper.find('input').at(0);
+        input1.instance().value = 20;
+
+        let input2 = wrapper.find('input').at(1);
+        input2.instance().value = 20;
+
+        substractButton.simulate('click')
+        let output = wrapper.find('input').at(2);
+
+        expect(output.prop('value')).toEqual(0);
+
+
     });
 
     it('fetch when asked', () => {
