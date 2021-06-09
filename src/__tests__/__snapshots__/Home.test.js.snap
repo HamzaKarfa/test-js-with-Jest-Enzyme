@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HOME shallow description Contains button with id="add" 1`] = `
+<button
+  id="add"
+  onClick={[Function]}
+>
+  Add
+</button>
+`;
+
+exports[`HOME shallow description Contains button with id="subtract" 1`] = `
+<button
+  id="subtract"
+  onClick={[Function]}
+>
+  Subtract
+</button>
+`;
+
+exports[`HOME shallow description Contains input1 1`] = `
+<input
+  placeholder="Input 1"
+  type="text"
+/>
+`;
+
+exports[`HOME shallow description Contains input2 1`] = `
+<input
+  placeholder="Input 2"
+  type="text"
+/>
+`;
+
+exports[`HOME shallow description Contains output 1`] = `
+<input
+  placeholder="Output"
+  readOnly={true}
+  type="text"
+  value={10}
+/>
+`;
+
+exports[`HOME snapshot It renders without crashing 1`] = `[Function]`;

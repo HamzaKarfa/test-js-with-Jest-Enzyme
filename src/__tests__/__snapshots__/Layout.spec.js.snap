@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout snapshot It renders Home 1`] = `
+<Home
+  fetchRandomNumber={[Function]}
+/>
+`;
+
+exports[`Layout snapshot It renders without crashing 1`] = `
+<div>
+  <h1>
+    Basic Calculator
+  </h1>
+  <Home
+    fetchRandomNumber={[Function]}
+  />
+</div>
+`;
